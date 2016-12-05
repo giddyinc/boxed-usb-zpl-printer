@@ -64,7 +64,7 @@ getDevice:
 			for _, alt := range cfg.Interfaces {
 				for _, iface := range alt.Setups {
 					for _, end := range iface.Endpoints {
-						if end.Direction() == usb.ENDPOINT_DIR_IN {
+						if end.Direction() == usb.ENDPOINT_DIR_OUT {
 							config.Config = cfg.Config
 							config.Iface = alt.Number
 							config.Setup = iface.Number
