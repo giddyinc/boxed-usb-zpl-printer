@@ -1,0 +1,5 @@
+package: github.com/giddyinc/boxed-usb-zpl-printer
+import:
+- package: github.com/giddyinc/gousb
+  subpackages:
+  - usb
