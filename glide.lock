@@ -1,8 +1,0 @@
-hash: b6c40129289c5d2900bdcd54df11b7a1d4e1b43de58d37b0abc03329d0085965
-updated: 2018-04-10T13:22:18.295697881-04:00
-imports:
-- name: github.com/giddyinc/gousb
-  version: a9213a25934a58309487a30f4a010442e8b3870a
-  subpackages:
-  - usb
-testImports: []

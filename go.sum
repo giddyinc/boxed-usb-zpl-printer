@@ -1,0 +1,8 @@
+github.com/giddyinc/boxed-usb-zpl-printer v0.0.0-20180410172358-b99881270636 h1:H5KwWjYwYekcWvFLemGb5N0miQnvgiHVUbkDc9I6lBg=
+github.com/giddyinc/boxed-usb-zpl-printer v0.0.0-20180410172358-b99881270636/go.mod h1:u8c29tm2PbQsfAWOcyVLkTpH9RsjXgT1nXDxqMv5AjI=
+github.com/giddyinc/gousb v0.0.0-20160420052129-a9213a25934a h1:E+ri/K9S2hG1FVAAjBXkkASP4CtpCmU6Lp+rk+dBKnQ=
+github.com/giddyinc/gousb v0.0.0-20160420052129-a9213a25934a/go.mod h1:nKkORTNRWYZU0mpcvDdfGlfq7AZftOe9rsgevJv4V6E=
+github.com/google/gousb v1.1.2 h1:1BwarNB3inFTFhPgUEfah4hwOPuDz/49I0uX8XNginU=
+github.com/google/gousb v1.1.2/go.mod h1:GGWUkK0gAXDzxhwrzetW592aOmkkqSGcj5KLEgmCVUg=
+github.com/kylelemons/gousb v0.0.0-20170613091925-99e7ca4f0173 h1:1lNpWOG92HHuSb7GKJj9+NX85zufHtMJ2tw+PZPzleo=
+github.com/kylelemons/gousb v0.0.0-20170613091925-99e7ca4f0173/go.mod h1:5UsKSFw2EsQiNUwJoMuiSzUnh3sY7teV66+U230sgvk=

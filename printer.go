@@ -1,14 +1,14 @@
-package zplprinter
+package usbzplprinter
 
 import (
 	"runtime"
 
-	"github.com/giddyinc/gousb/usb"
+	"github.com/google/gousb"
 )
 
 type UsbConfig struct {
-	Vendor   usb.ID
-	Product  usb.ID
+	Vendor   gousb.ID
+	Product  gousb.ID
 	Config   uint8
 	Iface    uint8
 	Setup    uint8
@@ -16,7 +16,7 @@ type UsbConfig struct {
 }
 
 type UsbZplPrinter struct {
-	*usb.Device
+	*gousb.Device
 	Config UsbConfig
 }
 
@@ -25,7 +25,7 @@ func (printer *UsbZplPrinter) Write(buf []byte) (int, error) {
 		printer.Config.Config,
 		printer.Config.Iface,
 		printer.Config.Setup,
-		printer.Config.Endpoint|uint8(usb.ENDPOINT_DIR_OUT),
+		printer.Config.Endpoint|uint8(gusb.ENDPOINT_DIR_OUT),
 	)
 	if err != nil {
 		return 0, err
@@ -35,11 +35,11 @@ func (printer *UsbZplPrinter) Write(buf []byte) (int, error) {
 	return l, err
 }
 
-func GetPrinters(ctx *usb.Context, config UsbConfig) ([]*UsbZplPrinter, error) {
+func GetPrinters(ctx *gusb.Context, config UsbConfig) ([]*UsbZplPrinter, error) {
 	var printers []*UsbZplPrinter
-	devices, err := ctx.ListDevices(func(desc *usb.Descriptor) bool {
+	devices, err := ctx.ListDevices(func(desc *gusb.Descriptor) bool {
 		var selected = desc.Vendor == config.Vendor
-		if config.Product != usb.ID(0) {
+		if config.Product != gusb.ID(0) {
 			selected = selected && desc.Product == config.Product
 		}
 		return selected
@@ -64,7 +64,7 @@ getDevice:
 			for _, alt := range cfg.Interfaces {
 				for _, iface := range alt.Setups {
 					for _, end := range iface.Endpoints {
-						if end.Direction() == usb.ENDPOINT_DIR_OUT {
+						if end.Direction() == gusb.ENDPOINT_DIR_OUT {
 							config.Config = cfg.Config
 							config.Iface = alt.Number
 							config.Setup = iface.Number

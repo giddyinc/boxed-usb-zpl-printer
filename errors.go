@@ -1,4 +1,4 @@
-package zplprinter
+package usbzplprinter
 
 import "errors"
 
